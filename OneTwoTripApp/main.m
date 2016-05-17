@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 static NSString *const OTTACompareString = @"onetwotrip";
+static NSString *const OTTANameOfOutputFile = @"output.txt";
 const NSInteger OTTANumberOfInputArgumetns = 2;
 const NSInteger OTTANumberOfLettersInCompareString = 10;
 const NSInteger OTTANumberOfConditionsInInputFile = 2;
@@ -60,7 +61,7 @@ int main(int argc, const char * argv[]) {
             return 0;
         }
         NSString *finalString = [arrayWithLetters componentsJoinedByString:@"\n"];
-        NSString *pathToOutputFile = [NSString stringWithFormat:@"%@/%@", path, @"output.txt"];
+        NSString *pathToOutputFile = [NSString stringWithFormat:@"%@/%@", path, OTTANameOfOutputFile];
         if ([[NSFileManager defaultManager] createFileAtPath:pathToOutputFile
                                                     contents:[finalString dataUsingEncoding:NSUTF8StringEncoding]
                                                   attributes:nil]) {
