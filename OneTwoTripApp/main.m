@@ -28,10 +28,10 @@ int main(int argc, const char * argv[]) {
             NSLog(@"Try again!");
             return 0;
         }
-        NSString* path = [NSString stringWithFormat:@"%s", argv[0]];
+        NSString *path = [NSString stringWithFormat:@"%s", argv[0]];
         path = [path stringByDeletingLastPathComponent];
         NSString *pathToInputFile = [NSString stringWithFormat:@"%@/%s", path, argv[1]];
-        NSString* content = [NSString stringWithContentsOfFile:pathToInputFile
+        NSString *content = [NSString stringWithContentsOfFile:pathToInputFile
                                                       encoding:NSUTF8StringEncoding
                                                          error:NULL];
         NSArray *symbolsFromInputFile = [content componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
